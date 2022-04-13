@@ -2,10 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gallapillo.stocks">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
-        android:name=".StockApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +13,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Stocks.NoActionBar">
+            android:theme="@style/Theme.Stocks">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

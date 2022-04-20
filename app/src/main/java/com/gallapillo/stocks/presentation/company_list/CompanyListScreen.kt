@@ -10,20 +10,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @Composable
-@Destination(start = true)
-fun CompanyListScreen(
-    navigator: DestinationsNavigator,
+fun CompanyListingsScreen(
+    navController: NavController,
     viewModel: CompanyListingsViewModel = hiltViewModel()
 ) {
-    val swipeRefreshState =  rememberSwipeRefreshState(isRefreshing = viewModel.state.isRefreshing)
+    val swipeRefreshState = rememberSwipeRefreshState(
+        isRefreshing = viewModel.state.isRefreshing
+    )
     val state = viewModel.state
-
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -63,16 +63,13 @@ fun CompanyListScreen(
                             }
                             .padding(16.dp)
                     )
-                    if (i < state.companies.size) {
-                        Divider(
-                            modifier = Modifier.padding(
-                                horizontal = 16.dp
+                    if(i < state.companies.size) {
+                        Divider(modifier = Modifier.padding(
+                            horizontal = 16.dp
                         ))
                     }
                 }
             }
         }
     }
-
-
 }

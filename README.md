@@ -1,7 +1,7 @@
 # Stocks - stocks kotlin app
 
 ## Used technolages
-  - Kotin
+  - Kotlin
   - Clean architecture
   - Retorfit
   - Room

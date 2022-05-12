@@ -2,10 +2,8 @@ package com.gallapillo.stocks.di
 
 import com.gallapillo.stocks.data.csv.CompanyListingParser
 import com.gallapillo.stocks.data.csv.CsvParser
-import com.gallapillo.stocks.data.csv.IntradayInfoParser
 import com.gallapillo.stocks.data.repository.StockRepositoryImpl
 import com.gallapillo.stocks.domain.model.CompanyListing
-import com.gallapillo.stocks.domain.model.IntradayInfo
 import com.gallapillo.stocks.domain.repository.StockRepository
 import com.opencsv.CSVParser
 import dagger.Binds
@@ -23,13 +21,6 @@ abstract class RepositoryModule {
     abstract fun bindCompanyListingsParser(
         companyListingParser: CompanyListingParser
     ): CsvParser<CompanyListing>
-
-    @Binds
-    @Singleton
-    abstract fun bindIntradayInfoParser(
-        intradayInfoParser: IntradayInfoParser
-    ): CsvParser<IntradayInfo>
-
 
     @Binds
     @Singleton
